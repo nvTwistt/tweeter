@@ -4,10 +4,7 @@ $(document).ready(function() {
   // --- our code goes here ---
   console.log("ready");
   const submitButton = document.getElementById("submitButton");
-  $(submitButton).on('click', function() {
-    console.log(this); //The this keyword is a reference to the button
-    console.log("clicked");
-  });
+  
   const textArea = document.getElementById("tweet-text");
   const charCount = document.getElementsByClassName("counter");
   // $("#btn").on('click', () => {
@@ -22,7 +19,10 @@ $(document).ready(function() {
     } else {
       $(charCount).css('color', '#545149');
     }
-    
-    //console.log("this is the count: ",$(charCount).text());
+  });
+  const returnText = document.getElementsByClassName("tweet");
+  $(submitButton).on('click', function() {
+    // document.getElementsByClassName("tweet-tracker")=($(textArea).val());
+    $(returnText).html('Hello');
   });
 });
