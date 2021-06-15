@@ -1,16 +1,8 @@
-.new-tweet {
+.container {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
 }
-.tweetButton {
-  background-color:#3234a8;
-  display: flex;
-  justify-content: flex-start;
-  font-family: 'Bungee', cursive;
-  color: #f3f1ec;
-  margin-top: 0.5em;
-}
+
 form {
   display: flex;
   justify-content: center;
@@ -37,4 +29,12 @@ textarea {
 }
 .counter {
   font-family: 'Bungee', cursive;
+}
+.tweetButton {
+  background-color:#3234a8;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Bungee', cursive;
+  color: #f3f1ec;
+  margin-top: 0.5em;
 }
