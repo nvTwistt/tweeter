@@ -59,12 +59,45 @@ const renderTweets = function(tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
   for (let items of tweets) {
-    console.log(items);
     let $userTweet = createTweetElement(items);
     $('.new-tweet').append($userTweet);
   }
 }
-renderTweets(data);
+const accessTweet = function () {
+  $.get("/tweets", function (res, req) {
+    renderTweets(res);
+  })
+}
+$('.tweetForm').submit(function (event) {
+  event.preventDefault();
+  //three cases
+  //1) there is content > 140 char
+  //2) content < 140 char
+  //2) there is not tweet
+  const getVal = $('#tweet-text').val();
+  if (getVal.length > 140) {
+    //send error message
+  } else if (!getVal){
+    //send error message 
+  } else {
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: $('.tweetForm').serialize(),
+    })
+      //.then(() => {
+        $('.new-tweet').empty();
+        $('.counter').text(140);
+        accessTweet();
+      //})
+      //.then(() => {
+        this.reset();
+      //})
+  }
+})
+
+//renderTweets(data);
+accessTweet();
 //const $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
