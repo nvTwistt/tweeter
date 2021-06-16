@@ -57,6 +57,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="error-message">
+        </div>
         <form class="tweetForm" method="POST" action="/tweets">
           <textarea placeholder = "What are you humming about?"name="text" id="tweet-text"></textarea>
           <br>
@@ -65,6 +67,8 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section class="public-tweets">
       </section>
     </main>
     <footer class = "main-footer">
