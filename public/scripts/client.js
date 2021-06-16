@@ -1,7 +1,12 @@
 $(document).ready(function() {
   console.log("We are ready to rock and roll");
-  const calcTime = (unix) => {
-    return moment(unix).fromNow();
+  const calcTime = (time) => {
+    return moment(time).fromNow();
+  }
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   }
   // Test / driver code (temporary). Eventually will get this from the server.
   const data = [
@@ -29,22 +34,27 @@ $(document).ready(function() {
     }
   ]
 const createTweetElement = function(tweet) {
-  let tweetContent = tweet.content.text;
-  let userName = tweet.user.name;
+  let tweetContent = escape(tweet.content.text);
+  let userName = escape(tweet.user.name);
+  let userAvatar = escape(tweet.user.avatars);
+  let userHandle = escape(tweet.user.handle);
+  let timeStamp = escape(calcTime(tweet.created_at));
+  console.log("user time: ", tweet.created_at);
+  console.log(timeStamp);
   return $(`
   <section class="tweet-tracker"><header class = "tweet-header">
   <div class = "left-header">
-    <img class="mini=pic" src=${tweet.user.avatars}> 
+    <img class="mini=pic" src=${userAvatar}> 
     <h6 class = "name">${userName}</h6>
   </div>
-    <h6 class = "name">${tweet.user.handle}</h6>
+    <h6 class = "name">${userHandle}</h6>
 </header>
 <p class = "tweet-body">
   ${tweetContent}
 </p>
 <footer class = "tweet-footer">
     <p class="time-section">
-      ${calcTime(tweet.created_at)}
+      ${timeStamp}
     </p>
     <div class="footer-icons">
       <i class = "fa fa-flag footer-i" ></i>
@@ -60,13 +70,28 @@ const renderTweets = function(tweets) {
   // takes return value and appends it to the tweets container
   for (let items of tweets) {
     let $userTweet = createTweetElement(items);
-    $('.new-tweet').append($userTweet);
+    //https://www.w3schools.com/jquery/html_prepend.asp
+    $('.public-tweets').prepend($userTweet);
   }
 }
-const accessTweet = function () {
+const loadTweets = function () {
   $.get("/tweets", function (res, req) {
     renderTweets(res);
   })
+}
+const toManyChars = function () {
+  $('.error-message')
+    .html("Please make your tweet lighter so it can fly")
+    .slideDown()
+    .delay(4000) //4 seconds
+    .slideUp();
+}
+const emptyTweetAlert = function () {
+  $('.error-message')
+    .html("Please enter a message before submitting tweet.")
+    .slideDown()
+    .delay(4000) //4 seconds
+    .slideUp();
 }
 $('.tweetForm').submit(function (event) {
   event.preventDefault();
@@ -76,28 +101,27 @@ $('.tweetForm').submit(function (event) {
   //2) there is not tweet
   const getVal = $('#tweet-text').val();
   if (getVal.length > 140) {
-    //send error message
+    toManyChars();
   } else if (!getVal){
-    //send error message 
+    emptyTweetAlert();
   } else {
     $.ajax({
       url: "/tweets",
       method: "POST",
       data: $('.tweetForm').serialize(),
     })
-      //.then(() => {
-        $('.new-tweet').empty();
-        $('.counter').text(140);
-        accessTweet();
-      //})
-      //.then(() => {
-        this.reset();
-      //})
+    .then(() => {
+      $('.public-tweets').empty();
+      $('.counter').text(140);
+      loadTweets();
+      this.reset()
+    })
   }
 })
 
+
 //renderTweets(data);
-accessTweet();
+loadTweets();
 //const $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)

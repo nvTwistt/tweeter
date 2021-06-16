@@ -23,8 +23,7 @@ form {
   margin-top: 0.5em;
 }
 textarea {
-  border: none;
-  border-bottom: 3px solid black;
+  border: 3px solid black;
   background-color: #f3f1ec;
   width: 100%;
 }
@@ -38,4 +37,11 @@ textarea {
   font-family: 'Bungee', cursive;
   color: #f3f1ec;
   margin-top: 0.5em;
+}
+
+.error-message {
+  align-items: center;
+  justify-content: center;
+  color: red;
+
 }
