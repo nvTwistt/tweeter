@@ -17,6 +17,11 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -25,11 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer" type="module"></script>
-    <!-- <script type="text/javascript">
-      jQuery(document).ready(function() {
-        $("timeago").timeago();
-      });
-   </script> -->
+    
   </head>
 
   <body>
@@ -50,7 +51,7 @@
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+          <h2>Matthew Tamkee</h2>
       </div>
   </header>
     <!-- Page-specific (main) content here -->
@@ -65,37 +66,8 @@
           </div>
         </form>
       </section>
-      <section class="tweet-tracker">
-          <header class = "tweet-header">
-            <div class = "left-header">
-              <img class="mini=pic" src="/images/profile-hex.png"> 
-              <h6 class = "name">Matthew Tamkee</h6>
-            </div>
-              <h6 class = "name">@mtamkee</h6>
-          </header>
-          <p class = "tweet-body">
-            This is where the tweet will go
-          </p>
-          <footer class = "tweet-footer">
-              <p class="time-section">
-                10 days ago
-                <script>const timer = function () {
-                 return $('time-selection').innerHTML = (new Date('20210615').toLocaleString());
-                }
-                timer();
-                </script>
-              </p>
-              <div class="footer-icons">
-                <i class = "fa fa-flag footer-i" ></i>
-                <i class = "fa fa-retweet footer-i"></i>
-                <i class = "fa fa-heart footer-i"></i>
-              </div>
-          </footer>
-      
-      </section>
     </main>
     <footer class = "main-footer">
-
     </footer>
   </body>
 </html>
