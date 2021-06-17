@@ -4,10 +4,10 @@ Tweeter is a simple single-page AJAX-based Twitter clone that uses jQuery, HTML5
 
 ## Final Product
 
-!["screenshot of desktop landing page"]()
-!["screenshot of mobile landing page"]()
-!["screenshot of tweets"]()
-!["screenshot of tweet area showing text area"]()
+!["screenshot of desktop landing page"](https://github.com/nvTwistt/tweeter/blob/master/docs/largeHomePage.png)
+!["screenshot of mobile landing page"](https://github.com/nvTwistt/tweeter/blob/master/docs/miniHomePage.png)
+!["screenshot of tweets"](https://github.com/nvTwistt/tweeter/blob/master/docs/tweets.png)
+!["screenshot of tweet area showing text area"](https://github.com/nvTwistt/tweeter/blob/master/docs/tweetText.png)
 
 ## Getting Started
 
