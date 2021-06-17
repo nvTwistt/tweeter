@@ -18,9 +18,7 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-      crossorigin="anonymous"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"
     ></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -44,34 +42,37 @@
         <i class="fa fa-angle-double-down"></i>
       </div>
     </nav>
-    <div class="spacer"></div>
-    <header class = "main-header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Matthew Tamkee</h2>
-      </div>
-  </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div class="error-message">
+    <!-- responsive content start  -->
+    <div class="responsive-content">
+      <header class = "main-header">
+        <div class="profile-pic">
+            <img src="/images/profile-hex.png"> 
         </div>
-        <form class="tweetForm" method="POST" action="/tweets">
-          <textarea placeholder = "What are you humming about?"name="text" id="tweet-text"></textarea>
-          <br>
-          <div class = "submission">
-            <button id ="submitButton" class = "tweetButton" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+        <br>
+        <div>
+            <h2>Matthew Tamkee</h2>
+        </div>
+    </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div class="error-message">
           </div>
-        </form>
-      </section>
-      <section class="public-tweets">
-      </section>
-    </main>
-    <footer class = "main-footer">
-    </footer>
+          <form class="tweetForm" method="POST" action="/tweets">
+            <textarea placeholder = "What are you humming about?"name="text" id="tweet-text"></textarea>
+            <br>
+            <div class = "submission">
+              <button id ="submitButton" class = "tweetButton" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section class="public-tweets">
+        </section>
+      </main>
+    </div>
+    <!-- Responsive content end -->
+    
+    
   </body>
 </html>

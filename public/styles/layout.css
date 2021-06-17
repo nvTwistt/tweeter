@@ -30,3 +30,47 @@ body {
   justify-content: center;
   background-color: #f3f1ec;
 }
+.public-tweets {
+  margin-bottom: 1em;
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    margin-bottom: 5em;
+  }
+  .responsive-content {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    right: 0;;
+    position: absolute;
+    justify-content: space-between;
+  }
+  .main-header {
+    margin: 2% 0 0 2%;
+    width: 35%;
+    align-self: flex-start;
+    justify-content: center;
+    border-radius: 2px;
+  }
+  .contianer {
+    flex-grow: 2;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  .top {
+    z-index: 1;
+    top: 0;
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0.5em;
+    position: sticky;
+    top: 0;
+  }
+  .public-tweets {
+    margin-bottom: 1em;
+  }
+}
