@@ -103,14 +103,14 @@ $(document).ready(function () {
    * notifies users if they have an empty tweet or if their tweet contains
    * too many characters. 
    */
-  const toManyChars = function () {
+  const toManyChars = function() {
     $(".error-message")
       .html("Please make your tweet lighter so it can fly")
       .slideDown()
       .delay(4000) //4 seconds
       .slideUp();
   };
-  const emptyTweetAlert = function () {
+  const emptyTweetAlert = function() {
     $(".error-message")
       .html("Please enter a message before submitting tweet.")
       .slideDown()
@@ -124,10 +124,10 @@ $(document).ready(function () {
    *  1) too many characters in the tweet
    *  2) the tweet box was left empty
    *  3) it is a valid tweet
-   * 
+   *
    * calls the loadTweets function at the end to ensure that the tweets are rendered in.
    */
-  $(".tweetForm").submit(function (event) {
+  $(".tweetForm").submit(function(event) {
     event.preventDefault();
     const getVal = $("#tweet-text").val();
     if (getVal.length > 140) {
