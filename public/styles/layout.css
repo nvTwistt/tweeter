@@ -34,7 +34,7 @@ body {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 1024px) {
-  body {
+  #main-content-container {
     display: flex;
     margin-bottom: 5em;
   }
