@@ -11,6 +11,9 @@
   outline-style: solid;
   outline-width: 2px;
 }
+#tweet-container.tweet-tracker:hover {
+  box-shadow: 0 5px 15px hotpink;
+}
 
 .tweet-header {
   display: flex;
